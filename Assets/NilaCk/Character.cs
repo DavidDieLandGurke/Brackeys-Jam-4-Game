@@ -24,10 +24,11 @@ public class Character : MonoBehaviour
     public int strength;
 
     public LayerMask mask;
+    private LineRenderer _lineRenderer;
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        _rb = GetComponent<Rigidbody2D>(); _lineRenderer = GetComponent<LineRenderer>();
     }
 
     void Update()
@@ -40,6 +41,10 @@ public class Character : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, _mouseAngle);
 
         Debug.DrawRay(transform.position, _mouseDirection);
+
+        GetComponent<LineRenderer>().SetPosition(0, transform.position);
+
+
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -58,19 +63,36 @@ public class Character : MonoBehaviour
     void Shoot()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, _mouseDirection, 50, mask);
+        StartCoroutine(ShotVisualisation(ray));
 
         Instantiate(muzzleFlash, ray.collider.gameObject.transform.position, ray.collider.gameObject.transform.rotation);
 
         if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))
         {
-            Debug.LogError("It's Spawning At The Enemy");
             ray.collider.gameObject.GetComponent<Zombies>().TakeDamage(strength);
             Instantiate(zombieHitEffect, ray.collider.gameObject.transform.position, ray.collider.gameObject.transform.rotation);
         }
         if (ray.collider != null && ray.collider.gameObject.tag != "Enemy")
         {
-            Debug.LogError("It Isn't Spawning At The Enemy");
             Instantiate(hitEffect, ray.collider.gameObject.transform.position, ray.collider.gameObject.transform.rotation);
         }
     }
+
+    IEnumerator ShotVisualisation(RaycastHit2D ray)
+    {
+        _lineRenderer.enabled = true;
+        _lineRenderer.SetPosition(0, transform.position);
+        if (ray.collider != null)
+        {
+            _lineRenderer.SetPosition(1, ray.point);
+        }
+        else
+        {
+            _lineRenderer.SetPosition(1, _mousePos + _mouseDirection * 15);
+        }
+
+        yield return new WaitForSeconds(0.05f);
+        _lineRenderer.enabled = false;
+    }
+
 }
