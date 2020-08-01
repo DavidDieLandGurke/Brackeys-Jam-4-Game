@@ -479,9 +479,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1618299813}
   - component: {fileID: 1618299812}
-  - component: {fileID: 1618299811}
   - component: {fileID: 1618299814}
   - component: {fileID: 1618299815}
+  - component: {fileID: 1618299811}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -498,11 +498,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1618299810}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71dbc6d8eeb446b448334c2a35e7e0b5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8ff271a5f6be2ea43a9655221fc381a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8.5
-  movement: {x: 0, y: 0}
+  speed: 4
+  mainCam: {fileID: 304072459}
 --- !u!212 &1618299812
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -666,7 +666,7 @@ MonoBehaviour:
   repathRate: 0.5
   canSearch: 1
   canMove: 1
-  maxSpeed: 1
+  maxSpeed: 2
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
