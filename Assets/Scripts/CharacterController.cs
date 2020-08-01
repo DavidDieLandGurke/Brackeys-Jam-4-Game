@@ -61,7 +61,7 @@ public class CharacterController : MonoBehaviour
         RaycastHit2D ray = Physics2D.Raycast(transform.position, _mouseDirection, 50, mask);
         StartCoroutine(ShotVisualisation(ray));
 
-        if (ray.collider.gameObject.CompareTag("Enemy"))
+        if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))
         {
             ray.collider.gameObject.GetComponent<Zombies>().TakeDamage(strength);
         }
@@ -77,7 +77,7 @@ public class CharacterController : MonoBehaviour
         }
         else
         {
-            _lineRenderer.SetPosition(1, _mouseDirection.normalized * 15);
+            _lineRenderer.SetPosition(1, _mouseDirection * 15);
         }
 
         yield return new WaitForSeconds(0.05f);

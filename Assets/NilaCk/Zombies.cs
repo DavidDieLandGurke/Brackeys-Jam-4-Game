@@ -17,7 +17,7 @@ public class Zombies : MonoBehaviour
         currentHealth -= damageAmount;
         if(currentHealth <= 0)
         {
-
+            Destroy(gameObject);
         }
     }
 }
