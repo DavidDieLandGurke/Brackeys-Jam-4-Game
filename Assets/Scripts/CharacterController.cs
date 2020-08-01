@@ -80,7 +80,7 @@ public class CharacterController : MonoBehaviour
             _lineRenderer.SetPosition(1, _mousePos + _mouseDirection * 15);
         }
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.025f);
         _lineRenderer.enabled = false;
     }
 }
