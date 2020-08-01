@@ -17,6 +17,10 @@ public class CharacterController : MonoBehaviour
 
     public Camera mainCam;
 
+    public int strength;
+
+    public LayerMask mask;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -30,6 +34,13 @@ public class CharacterController : MonoBehaviour
         _mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
         transform.eulerAngles = new Vector3(0, 0, _mouseAngle);
+
+        Debug.DrawRay(transform.position, _mouseDirection);
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
     }
 
     void FixedUpdate()
@@ -38,5 +49,15 @@ public class CharacterController : MonoBehaviour
 
         _mouseDirection = _mousePos - _rb.position;
         _mouseAngle = Mathf.Atan2(_mouseDirection.y, _mouseDirection.x) * Mathf.Rad2Deg;
+    }
+
+    void Shoot()
+    {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position, _mouseDirection, 50, mask);
+
+        if (ray.collider.gameObject.CompareTag("Enemy"))
+        {
+            ray.collider.gameObject.GetComponent<Zombies>().TakeDamage(strength);
+        }
     }
 }
