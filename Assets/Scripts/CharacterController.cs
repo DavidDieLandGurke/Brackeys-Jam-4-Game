@@ -21,9 +21,12 @@ public class CharacterController : MonoBehaviour
 
     public LayerMask mask;
 
+    private LineRenderer _lineRenderer;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _lineRenderer = GetComponent<LineRenderer>();
     }
 
     void Update()
@@ -36,6 +39,8 @@ public class CharacterController : MonoBehaviour
         transform.eulerAngles = new Vector3(0, 0, _mouseAngle);
 
         Debug.DrawRay(transform.position, _mouseDirection);
+
+        GetComponent<LineRenderer>().SetPosition(0, transform.position);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -54,10 +59,28 @@ public class CharacterController : MonoBehaviour
     void Shoot()
     {
         RaycastHit2D ray = Physics2D.Raycast(transform.position, _mouseDirection, 50, mask);
+        StartCoroutine(ShotVisualisation(ray));
 
         if (ray.collider.gameObject.CompareTag("Enemy"))
         {
             ray.collider.gameObject.GetComponent<Zombies>().TakeDamage(strength);
         }
+    }
+
+    IEnumerator ShotVisualisation(RaycastHit2D ray)
+    {
+        _lineRenderer.enabled = true;
+        _lineRenderer.SetPosition(0, transform.position);
+        if(ray.collider != null)
+        {
+            _lineRenderer.SetPosition(1, ray.point);
+        }
+        else
+        {
+            _lineRenderer.SetPosition(1, _mouseDirection.normalized * 15);
+        }
+
+        yield return new WaitForSeconds(0.05f);
+        _lineRenderer.enabled = false;
     }
 }
