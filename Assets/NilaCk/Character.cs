@@ -26,9 +26,13 @@ public class Character : MonoBehaviour
     public LayerMask mask;
     private LineRenderer _lineRenderer;
 
+    int maxThoughts = 100;
+    public int currentThoughts;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>(); _lineRenderer = GetComponent<LineRenderer>();
+        currentThoughts = maxThoughts;
     }
 
     void Update()
@@ -44,11 +48,16 @@ public class Character : MonoBehaviour
 
         GetComponent<LineRenderer>().SetPosition(0, transform.position);
 
-
-
         if (Input.GetMouseButtonDown(0))
         {
             Shoot();
+        }
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            StartCoroutine(onHit());
         }
     }
 
@@ -65,7 +74,7 @@ public class Character : MonoBehaviour
         RaycastHit2D ray = Physics2D.Raycast(transform.position, _mouseDirection, 50, mask);
         StartCoroutine(ShotVisualisation(ray));
 
-        Instantiate(muzzleFlash, ray.collider.gameObject.transform.position, ray.collider.gameObject.transform.rotation);
+        Instantiate(muzzleFlash, transform.position, transform.rotation);
 
         if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))
         {
@@ -95,4 +104,19 @@ public class Character : MonoBehaviour
         _lineRenderer.enabled = false;
     }
 
+    public void LoseThoughts(int loss)
+    {
+        currentThoughts -= loss;
+        if(currentThoughts <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator onHit()
+    {
+        LoseThoughts(15);
+        yield return new WaitForSeconds(1.2f);
+
+    }
 }

@@ -7,6 +7,8 @@ public class Zombies : MonoBehaviour
     public float maxHealth = 100;
     float currentHealth;
 
+
+
     void Start()
     {
         currentHealth = maxHealth;
