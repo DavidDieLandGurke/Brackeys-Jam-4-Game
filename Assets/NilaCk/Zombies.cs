@@ -25,7 +25,6 @@ public class Zombies : MonoBehaviour
     {
         healthSlider.value = currentHealth;
         sliderCanvas.transform.position = transform.position;
-        
     }
 
     public void TakeDamage(int damageAmount)
