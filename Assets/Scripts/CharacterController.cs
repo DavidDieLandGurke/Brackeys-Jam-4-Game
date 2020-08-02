@@ -72,7 +72,14 @@ public class CharacterController : MonoBehaviour
 
         if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))
         {
-            ray.collider.gameObject.GetComponent<Zombies>().TakeDamage(strength);
+            if(ray.collider.gameObject.GetComponent<Enemies>() != null)
+            {
+                ray.collider.gameObject.GetComponent<Enemies>().TakeDamage(strength);
+            }
+            else
+            {
+                ray.collider.gameObject.GetComponent<Enemy>().TakeDamage(strength);
+            }
         }
     }
 
