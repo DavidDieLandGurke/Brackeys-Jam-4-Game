@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1408,32 +1408,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gradient:
     serializedVersion: 2
-    key0: {r: 0.8000001, g: 0.13725491, b: 0.13725491, a: 1}
-    key1: {r: 0.8000001, g: 0.75294125, b: 0.13725491, a: 1}
-    key2: {r: 1, g: 0.48377475, b: 0, a: 0.7411765}
-    key3: {r: 0.7294118, g: 0.6313726, b: 0.13333334, a: 0}
-    key4: {r: 0.6745098, g: 0.17254902, b: 0.17254902, a: 0}
-    key5: {r: 0.13725491, g: 0.44705886, b: 0.8000001, a: 0}
-    key6: {r: 0.13725491, g: 0.44705886, b: 0.8000001, a: 0}
-    key7: {r: 0.12941177, g: 0.35686275, b: 0.67058825, a: 0}
-    ctime0: 0
-    ctime1: 33153
-    ctime2: 65535
-    ctime3: 20046
-    ctime4: 33924
-    ctime5: 54741
-    ctime6: 54548
-    ctime7: 65535
+    key0: {r: 1, g: 0.07427583, b: 0, a: 1}
+    key1: {r: 1, g: 0.40851706, b: 0, a: 1}
+    key2: {r: 0.99381757, g: 1, b: 0, a: 0}
+    key3: {r: 0.010703921, g: 1, b: 0, a: 0}
+    key4: {r: 0.010703921, g: 1, b: 0, a: 0}
+    key5: {r: 0.010703921, g: 1, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 12336
+    ctime1: 23130
+    ctime2: 38550
+    ctime3: 53006
+    ctime4: 65535
+    ctime5: 65535
+    ctime6: 0
+    ctime7: 0
     atime0: 0
     atime1: 65535
-    atime2: 46646
+    atime2: 0
     atime3: 0
     atime4: 0
     atime5: 0
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_NumColorKeys: 3
+    m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fillImage: {fileID: 421929342}
 --- !u!1 &1759383246
@@ -1635,6 +1635,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthSlider: {fileID: 0}
+  sliderCanvas: {fileID: 0}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  fill: {fileID: 0}
 --- !u!61 &1864251350
 BoxCollider2D:
   m_ObjectHideFlags: 0
