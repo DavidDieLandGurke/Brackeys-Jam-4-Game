@@ -17,14 +17,20 @@ public class Zombies : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthSlider.maxValue = maxHealth;
-        fill.color = gradient.Evaluate(1);
+        if(healthSlider != null && fill != null)
+        {
+            healthSlider.maxValue = maxHealth;
+            fill.color = gradient.Evaluate(1);
+        }
     }
 
     void Update()
     {
-        healthSlider.value = currentHealth;
-        sliderCanvas.transform.position = transform.position;
+        if(healthSlider != null && sliderCanvas != null)
+        {
+            healthSlider.value = currentHealth;
+            sliderCanvas.transform.position = transform.position;
+        }
     }
 
     public void TakeDamage(int damageAmount)
@@ -33,7 +39,10 @@ public class Zombies : MonoBehaviour
         fill.color = gradient.Evaluate(healthSlider.normalizedValue);
         if (currentHealth <= 0)
         {
-            Destroy(sliderCanvas);
+            if(sliderCanvas != null)
+            {
+                Destroy(sliderCanvas);
+            }
             Destroy(gameObject);
         }
     }
