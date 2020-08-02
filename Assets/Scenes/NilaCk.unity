@@ -1199,7 +1199,7 @@ MonoBehaviour:
   hitEffect: {fileID: 5305096650163225985, guid: 0e7174919bc5b6c4c9676d6b0f02186a,
     type: 3}
   mainCam: {fileID: 304072459}
-  strength: 20
+  strength: 50
   mask:
     serializedVersion: 2
     m_Bits: 311
@@ -1522,6 +1522,7 @@ GameObject:
   - component: {fileID: 1864251348}
   - component: {fileID: 1864251349}
   - component: {fileID: 1864251350}
+  - component: {fileID: 1864251351}
   m_Layer: 0
   m_Name: Enemy's Parent
   m_TagString: Enemy
@@ -1634,7 +1635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49732c41b304bd048aa9f1f09c6e05d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 2
   healthSlider: {fileID: 0}
   sliderCanvas: {fileID: 0}
   gradient:
@@ -1693,3 +1694,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6942761, y: 0.69147545}
   m_EdgeRadius: 0
+--- !u!50 &1864251351
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864251344}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
