@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 6379528743cf30748865a55cb9948b22
+  - enabled: 1
+    path: Assets/Scenes/Daves Scene lol.unity
+    guid: 55fed12c409a4804c9d6a4d359e091c2
+  - enabled: 1
+    path: Assets/Scenes/NilaCk.unity
+    guid: 70b19309bdf142249bf631dcb9af97aa
   m_configObjects: {}
