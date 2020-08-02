@@ -15,13 +15,15 @@ public class CharacterController : MonoBehaviour
     private Vector2 _mouseDirection;
     private float _mouseAngle;
 
-    public Camera mainCam;
-
     public int strength;
+
+    public Camera mainCam;
 
     public LayerMask mask;
 
     private LineRenderer _lineRenderer;
+
+    public GameObject deathCanvas;
 
     public int maxHealth;
     int currentHealth;
@@ -101,6 +103,7 @@ public class CharacterController : MonoBehaviour
         currentHealth -= loss;
         if (currentHealth <= 0)
         {
+            deathCanvas.SetActive(true);
             Destroy(gameObject);
         }
     }
