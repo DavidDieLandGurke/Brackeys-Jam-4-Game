@@ -28,11 +28,14 @@ public class CharacterController : MonoBehaviour
     public int maxHealth;
     int currentHealth;
 
+    public ThoughtsBar thoughtsBar;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _lineRenderer = GetComponent<LineRenderer>();
         currentHealth = maxHealth;
+        thoughtsBar.setMaxThoughts(maxHealth);
     }
 
     void Update()
@@ -101,6 +104,7 @@ public class CharacterController : MonoBehaviour
     public void LoseThoughts(int loss)
     {
         currentHealth -= loss;
+        thoughtsBar.setThoughts(currentHealth);
         if (currentHealth <= 0)
         {
             deathCanvas.SetActive(true);
@@ -112,6 +116,5 @@ public class CharacterController : MonoBehaviour
     {
         LoseThoughts(25);
         yield return new WaitForSeconds(1.2f);
-
     }
 }
