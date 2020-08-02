@@ -23,10 +23,14 @@ public class CharacterController : MonoBehaviour
 
     private LineRenderer _lineRenderer;
 
+    public int maxHealth;
+    int currentHealth;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _lineRenderer = GetComponent<LineRenderer>();
+        currentHealth = maxHealth;
     }
 
     void Update()
@@ -82,5 +86,29 @@ public class CharacterController : MonoBehaviour
 
         yield return new WaitForSeconds(0.025f);
         _lineRenderer.enabled = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            StartCoroutine(onHit());
+        }
+    }
+
+    public void LoseThoughts(int loss)
+    {
+        currentHealth -= loss;
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator onHit()
+    {
+        LoseThoughts(25);
+        yield return new WaitForSeconds(1.2f);
+
     }
 }
