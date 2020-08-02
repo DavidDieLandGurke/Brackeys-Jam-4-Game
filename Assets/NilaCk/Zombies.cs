@@ -36,7 +36,11 @@ public class Zombies : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        fill.color = gradient.Evaluate(healthSlider.normalizedValue);
+        
+        if(fill != null)
+        {
+            fill.color = gradient.Evaluate(healthSlider.normalizedValue);
+        }
         if (currentHealth <= 0)
         {
             if(sliderCanvas != null)
