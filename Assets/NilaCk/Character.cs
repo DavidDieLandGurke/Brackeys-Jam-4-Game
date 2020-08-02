@@ -27,12 +27,16 @@ public class Character : MonoBehaviour
     private LineRenderer _lineRenderer;
 
     int maxThoughts = 100;
-    public int currentThoughts;
+    int currentThoughts;
+
+    public ThoughtsBar thoughtsBar;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>(); _lineRenderer = GetComponent<LineRenderer>();
         currentThoughts = maxThoughts;
+
+        thoughtsBar.setMaxThoughts(maxThoughts);
     }
 
     void Update()
@@ -107,6 +111,7 @@ public class Character : MonoBehaviour
     public void LoseThoughts(int loss)
     {
         currentThoughts -= loss;
+        thoughtsBar.setThoughts(currentThoughts);
         if(currentThoughts <= 0)
         {
             Destroy(gameObject);
