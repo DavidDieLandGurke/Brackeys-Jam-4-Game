@@ -55,13 +55,12 @@ public class Enemy : MonoBehaviour
             {
                 Destroy(sliderCanvas);
             }
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
         }
     }
 
     IEnumerator Convinced()
     {
-        yield return new WaitForSeconds(0.2f);
         gameObject.GetComponent<AIPath>().enabled = false;
         yield return new WaitForSeconds(0.1f);
         gameObject.tag = "EnemyConvinced";

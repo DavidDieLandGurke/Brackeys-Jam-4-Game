@@ -11,32 +11,31 @@ public class Character : MonoBehaviour
 
     public float speed;
 
-    public GameObject muzzleFlash;
-    public GameObject zombieHitEffect;
-    public GameObject hitEffect;
-
     private Vector2 _mousePos;
     private Vector2 _mouseDirection;
     private float _mouseAngle;
 
-    public Camera mainCam;
-
     public int strength;
 
+    public Camera mainCam;
+
     public LayerMask mask;
+
     private LineRenderer _lineRenderer;
 
-    int maxThoughts = 100;
-    int currentThoughts;
+    public GameObject deathCanvas;
+
+    public int maxHealth;
+    public int currentHealth;
 
     public ThoughtsBar thoughtsBar;
 
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>(); _lineRenderer = GetComponent<LineRenderer>();
-        currentThoughts = maxThoughts;
-
-        thoughtsBar.setMaxThoughts(maxThoughts);
+        _rb = GetComponent<Rigidbody2D>();
+        _lineRenderer = GetComponent<LineRenderer>();
+        currentHealth = maxHealth;
+        thoughtsBar.setMaxThoughts(maxHealth);
     }
 
     void Update()
@@ -57,13 +56,6 @@ public class Character : MonoBehaviour
             Shoot();
         }
     }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            StartCoroutine(onHit());
-        }
-    }
 
     void FixedUpdate()
     {
@@ -78,16 +70,16 @@ public class Character : MonoBehaviour
         RaycastHit2D ray = Physics2D.Raycast(transform.position, _mouseDirection, 50, mask);
         StartCoroutine(ShotVisualisation(ray));
 
-        Instantiate(muzzleFlash, transform.position, transform.rotation);
-
         if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))
         {
-            ray.collider.gameObject.GetComponent<Zombies>().TakeDamage(strength);
-            Instantiate(zombieHitEffect, ray.collider.gameObject.transform.position, ray.collider.gameObject.transform.rotation);
-        }
-        if (ray.collider != null && ray.collider.gameObject.tag != "Enemy")
-        {
-            Instantiate(hitEffect, ray.collider.gameObject.transform.position, ray.collider.gameObject.transform.rotation);
+            if (ray.collider.gameObject.GetComponent<Enemies>() != null)
+            {
+                ray.collider.gameObject.GetComponent<Enemies>().TakeDamage(strength);
+            }
+            else
+            {
+                ray.collider.gameObject.GetComponent<Enemy>().TakeDamage(strength);
+            }
         }
     }
 
@@ -104,24 +96,32 @@ public class Character : MonoBehaviour
             _lineRenderer.SetPosition(1, _mousePos + _mouseDirection * 15);
         }
 
-        yield return new WaitForSeconds(0.05f);
+        yield return new WaitForSeconds(0.025f);
         _lineRenderer.enabled = false;
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            StartCoroutine(onHit());
+        }
     }
 
     public void LoseThoughts(int loss)
     {
-        currentThoughts -= loss;
-        thoughtsBar.setThoughts(currentThoughts);
-        if(currentThoughts <= 0)
+        currentHealth -= loss;
+        thoughtsBar.setThoughts(currentHealth);
+        if (currentHealth <= 0)
         {
+            deathCanvas.SetActive(true);
             Destroy(gameObject);
         }
     }
 
     IEnumerator onHit()
     {
-        LoseThoughts(15);
-        yield return new WaitForSeconds(1.2f);
-
+        LoseThoughts(25);
+        yield return null;
     }
 }
