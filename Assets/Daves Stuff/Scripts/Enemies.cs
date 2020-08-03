@@ -15,7 +15,10 @@ public class Enemies : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+    public GameObject bubble;
     public Animator bubbleAnim;
+
+    public GameObject parent;
 
     void Start()
     {
@@ -36,11 +39,9 @@ public class Enemies : MonoBehaviour
 
     void Update()
     {
-        if (healthSlider != null && sliderCanvas != null)
-        {
-            healthSlider.value = currentHealth;
-            sliderCanvas.transform.position = transform.position;
-        }
+        healthSlider.value = currentHealth;
+        sliderCanvas.transform.position = transform.position;
+        bubble.transform.position = transform.position;
     }
 
     public void TakeDamage(int damageAmount)
@@ -57,7 +58,7 @@ public class Enemies : MonoBehaviour
             {
                 Destroy(sliderCanvas);
             }
-            Destroy(gameObject);
+            Destroy(parent);
         }
     }
 
@@ -65,7 +66,6 @@ public class Enemies : MonoBehaviour
     {
         gameObject.GetComponent<AIPath>().enabled = false;
         gameObject.tag = "EnemyConvinced";
-        transform.eulerAngles = Vector3.zero;
         bubbleAnim.SetTrigger("Bubble");
         yield return new WaitForSeconds(2.5f);
         TakeDamage(100);
