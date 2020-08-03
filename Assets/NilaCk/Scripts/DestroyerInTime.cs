@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyerInTime : MonoBehaviour
 {
-    [SerializeField] int destroyedAfter;
+    public int destroyedAfter;
 
     void Start()
     {
