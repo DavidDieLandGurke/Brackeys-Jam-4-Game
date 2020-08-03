@@ -15,6 +15,8 @@ public class Enemies : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+    public Animator bubbleAnim;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -61,11 +63,11 @@ public class Enemies : MonoBehaviour
 
     IEnumerator Convince()
     {
-        yield return new WaitForSeconds(0.2f);
         gameObject.GetComponent<AIPath>().enabled = false;
-        yield return new WaitForSeconds(0.1f);
         gameObject.tag = "EnemyConvinced";
-        yield return new WaitForSeconds(5f);
+        transform.eulerAngles = Vector3.zero;
+        bubbleAnim.SetTrigger("Bubble");
+        yield return new WaitForSeconds(2.5f);
         TakeDamage(100);
     }
 }
