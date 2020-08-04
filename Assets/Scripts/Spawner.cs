@@ -7,19 +7,27 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] gameObjects;
-    public float spawnEverySecond = 0.02f;
-    float nextSpawn = 0;
+    public int id;
 
     void Start()
     {
         GameEvents.onSpawn += Spawn;
-        Spawn();
+        Spawn(id);
+    }
+    private void OnDestroy()
+    {
+        GameEvents.onSpawn -= Spawn;
     }
 
-    void Spawn()
+    void Spawn(int id)
     {
-        var randomObject = UnityEngine.Random.Range(0, gameObjects.Length);
-        Instantiate(gameObjects[randomObject], transform.position, Quaternion.identity);
+        if (id == this.id)
+        {
+            var randomObject = UnityEngine.Random.Range(0, gameObjects.Length);
+            var theObject = gameObjects[randomObject];
+            var newEnemy = Instantiate(theObject, transform.position, Quaternion.identity);
+            newEnemy.GetComponentInChildren<Enemy>().id = id;
+        }
     }
 
     //void Update()

@@ -1346,7 +1346,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 3627690663489958790, guid: 8e8d927a1a73cc84cb953658d97f69ce, type: 3}
-  spawnEverySecond: 13
+  id: 3
 --- !u!1 &929319026
 GameObject:
   m_ObjectHideFlags: 0
@@ -4781,49 +4781,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1001898978
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1001898980}
-  - component: {fileID: 1001898979}
-  m_Layer: 0
-  m_Name: GameEventManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1001898979
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001898978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23a862d367b1da34185375138587ac7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1001898980
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001898978}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11861515, y: -0.48062754, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042685751
 GameObject:
   m_ObjectHideFlags: 0
@@ -6180,7 +6137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 3627690663489958790, guid: 8e8d927a1a73cc84cb953658d97f69ce, type: 3}
-  spawnEverySecond: 15
+  id: 1
 --- !u!1 &1704864341
 GameObject:
   m_ObjectHideFlags: 0
@@ -6300,7 +6257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 3627690663489958790, guid: 8e8d927a1a73cc84cb953658d97f69ce, type: 3}
-  spawnEverySecond: 14
+  id: 2
 --- !u!1 &1893658703
 GameObject:
   m_ObjectHideFlags: 0
@@ -6346,7 +6303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 3627690663489958790, guid: 8e8d927a1a73cc84cb953658d97f69ce, type: 3}
-  spawnEverySecond: 12
+  id: 4
 --- !u!1 &1949702532
 GameObject:
   m_ObjectHideFlags: 0

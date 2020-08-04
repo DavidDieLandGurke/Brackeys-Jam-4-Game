@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class GameEvents : MonoBehaviour
 {
-    public static event Action onSpawn;
-    public static void NotNull()
+    public static event Action<int> onSpawn;
+    public static void NotNull(int id)
     {
         if (onSpawn != null)
         {
-            onSpawn.Invoke();
+            onSpawn.Invoke(id);
         }
     }
 }

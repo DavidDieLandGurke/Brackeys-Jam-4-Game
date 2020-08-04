@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+    public int id;
+
     void Start()
     {
         //GameEvents.NotNull();
@@ -63,9 +65,10 @@ public class Enemy : MonoBehaviour
     IEnumerator Convinced()
     {
         gameObject.GetComponent<AIPath>().enabled = false;
-        GameEvents.NotNull();
-        yield return new WaitForSeconds(0.1f);
+        GameEvents.NotNull(id);
+        yield return new WaitForSeconds(0.01f);
         gameObject.tag = "EnemyConvinced";
+        id = 1000;
         yield return new WaitForSeconds(5f);
         TakeDamage(100);
     }

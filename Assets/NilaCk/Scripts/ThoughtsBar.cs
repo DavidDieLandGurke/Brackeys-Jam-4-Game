@@ -9,7 +9,7 @@ public class ThoughtsBar : MonoBehaviour
     public Gradient gradient;
     public Image fillImage;
 
-    void Start()
+    void Awake()
     {
         slider = GetComponent<Slider>();
     }
