@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
         Spawn();
     }
 
-    public void Spawn()
+    void Spawn()
     {
         var randomObject = UnityEngine.Random.Range(0, gameObjects.Length);
         Instantiate(gameObjects[randomObject], transform.position, Quaternion.identity);
