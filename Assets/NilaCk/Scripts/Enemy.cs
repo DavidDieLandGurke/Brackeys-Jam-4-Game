@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        //GameEvents.NotNull();
         currentHealth = maxHealth;
         if (healthSlider != null && fill != null)
         {
@@ -62,6 +63,7 @@ public class Enemy : MonoBehaviour
     IEnumerator Convinced()
     {
         gameObject.GetComponent<AIPath>().enabled = false;
+        GameEvents.NotNull();
         yield return new WaitForSeconds(0.1f);
         gameObject.tag = "EnemyConvinced";
         yield return new WaitForSeconds(5f);
