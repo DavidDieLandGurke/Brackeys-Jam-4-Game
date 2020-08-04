@@ -148,7 +148,7 @@ MonoBehaviour:
   fill: {fileID: 3627690664343050656}
   bubble: {fileID: 1856775108}
   bubbleAnim: {fileID: 1856775111}
-  parent: {fileID: 3627690663489958790}
+  id: 0
 --- !u!1001 &3790212969212871383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -156,6 +156,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1856775109, guid: 20b6cb4f5ff0395439128d3898f7e8d5, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 486863667426419199, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -229,12 +233,17 @@ PrefabInstance:
     - target: {fileID: 486863667666809169, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
         type: 3}
       propertyPath: m_Name
-      value: ENEMY
+      value: ENEMY Variant
       objectReference: {fileID: 0}
     - target: {fileID: 486863669022956404, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7395110710963614660, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8090008316810827095, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
         type: 3}
@@ -244,12 +253,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8730984034017938950, guid: 20b6cb4f5ff0395439128d3898f7e8d5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 20b6cb4f5ff0395439128d3898f7e8d5, type: 3}
---- !u!1 &3627690663489958790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 486863667666809169, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
-    type: 3}
-  m_PrefabInstance: {fileID: 3790212969212871383}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3627690663489958791 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 486863667666809168, guid: 20b6cb4f5ff0395439128d3898f7e8d5,

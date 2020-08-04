@@ -26,7 +26,14 @@ public class Spawner : MonoBehaviour
             var randomObject = UnityEngine.Random.Range(0, gameObjects.Length);
             var theObject = gameObjects[randomObject];
             var newEnemy = Instantiate(theObject, transform.position, Quaternion.identity);
-            newEnemy.GetComponentInChildren<Enemy>().id = id;
+            if(newEnemy.GetComponentInChildren<Enemy>() != null)
+            {
+                newEnemy.GetComponentInChildren<Enemy>().id = id;
+            }
+            else
+            {
+                newEnemy.GetComponentInChildren<Enemies>().id = id;
+            }
         }
     }
 

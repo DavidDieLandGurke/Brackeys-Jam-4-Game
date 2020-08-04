@@ -18,7 +18,7 @@ public class Enemies : MonoBehaviour
     public GameObject bubble;
     public Animator bubbleAnim;
 
-    public GameObject parent;
+    public int id;
 
     void Start()
     {
@@ -39,8 +39,11 @@ public class Enemies : MonoBehaviour
 
     void Update()
     {
-        healthSlider.value = currentHealth;
-        sliderCanvas.transform.position = transform.position;
+        if (healthSlider != null && sliderCanvas != null)
+        {
+            healthSlider.value = currentHealth;
+            sliderCanvas.transform.position = transform.position;
+        }
         bubble.transform.position = transform.position;
     }
 
@@ -58,13 +61,16 @@ public class Enemies : MonoBehaviour
             {
                 Destroy(sliderCanvas);
             }
-            Destroy(parent);
+            GameEvents.NotNull(id);
+            id = 1000;
+            Destroy(transform.parent.gameObject);
         }
     }
 
     IEnumerator Convince()
     {
         gameObject.GetComponent<AIPath>().enabled = false;
+        yield return new WaitForSeconds(0.01f);
         gameObject.tag = "EnemyConvinced";
         bubbleAnim.SetTrigger("Bubble");
         yield return new WaitForSeconds(2.5f);
