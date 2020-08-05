@@ -1,31 +1,19 @@
 fileFormatVersion: 2
-guid: 1ed896480dd317c49bbfc82f027e3bf2
+guid: a11314483e4ae5e4ab192fd14f1d1ed8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6554742690162488130
-    second: Old man walk sprite_0
+      213: -5990225469907662845
+    second: Old man gun sprite_0
   - first:
-      213: 5626331195264274643
-    second: Old man walk sprite_1
+      213: -6334703072586267655
+    second: Old man gun sprite_1
   - first:
-      213: 3498150088597371300
-    second: Old man walk sprite_2
+      213: -2474864175605819615
+    second: Old man gun sprite_2
   - first:
-      213: -8123385527018323575
-    second: Old man walk sprite_3
-  - first:
-      213: 6119133545049162192
-    second: Old man walk sprite_4
-  - first:
-      213: 9101252190745304184
-    second: Old man walk sprite_5
-  - first:
-      213: -1844282417040935756
-    second: Old man walk sprite_6
-  - first:
-      213: -5697798084953383159
-    second: Old man walk sprite_7
+      213: 959651467329958228
+    second: Old man gun sprite_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -135,12 +123,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Old man walk sprite_0
+      name: Old man gun sprite_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 2
         y: 0
-        width: 31
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -149,19 +137,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 24339398fbf17fa50800000000000000
-      internalID: 6554742690162488130
+      spriteID: 30808a53ca17edca0800000000000000
+      internalID: -5990225469907662845
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old man walk sprite_1
+      name: Old man gun sprite_1
       rect:
         serializedVersion: 2
-        x: 33
+        x: 34
         y: 0
-        width: 31
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -170,19 +158,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d01d6a996eb41e40800000000000000
-      internalID: 5626331195264274643
+      spriteID: 9f38be04e1d9618a0800000000000000
+      internalID: -6334703072586267655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old man walk sprite_2
+      name: Old man gun sprite_2
       rect:
         serializedVersion: 2
-        x: 65
+        x: 66
         y: 0
-        width: 31
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -191,19 +179,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a9f8d9b8fceb8030800000000000000
-      internalID: 3498150088597371300
+      spriteID: 127dca9052487add0800000000000000
+      internalID: -2474864175605819615
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Old man walk sprite_3
+      name: Old man gun sprite_3
       rect:
         serializedVersion: 2
-        x: 97
+        x: 98
         y: 0
-        width: 31
+        width: 30
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -212,92 +200,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 981068817efe34f80800000000000000
-      internalID: -8123385527018323575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Old man walk sprite_4
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 0
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d105d5e9878be450800000000000000
-      internalID: 6119133545049162192
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Old man walk sprite_5
-      rect:
-        serializedVersion: 2
-        x: 161
-        y: 0
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87c9e90a5a42e4e70800000000000000
-      internalID: 9101252190745304184
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Old man walk sprite_6
-      rect:
-        serializedVersion: 2
-        x: 193
-        y: 0
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b4b6c2c9eac766e0800000000000000
-      internalID: -1844282417040935756
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Old man walk sprite_7
-      rect:
-        serializedVersion: 2
-        x: 225
-        y: 0
-        width: 31
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 90fd37874da5de0b0800000000000000
-      internalID: -5697798084953383159
+      spriteID: 4517262dced515d00800000000000000
+      internalID: 959651467329958228
       vertices: []
       indices: 
       edges: []

@@ -15,6 +15,8 @@ public class CharacterController : MonoBehaviour
     private Vector2 _mouseDirection;
     private float _mouseAngle;
 
+    public Transform shootPos;
+
     public int strength;
 
     public Camera mainCam;
@@ -54,7 +56,7 @@ public class CharacterController : MonoBehaviour
 
         Debug.DrawRay(transform.position, _mouseDirection);
 
-        _lineRenderer.SetPosition(0, transform.position);
+        _lineRenderer.SetPosition(0, shootPos.position);
 
         _anim.SetFloat("Vel", _rb.velocity.magnitude);
 
@@ -68,13 +70,14 @@ public class CharacterController : MonoBehaviour
     {
         _rb.velocity = new Vector2(_xAxis, _yAxis)* speed;
 
-        _mouseDirection = _mousePos - _rb.position;
+        _mouseDirection = _mousePos - new Vector2(shootPos.position.x, shootPos.position.y);
         _mouseAngle = Mathf.Atan2(_mouseDirection.y, _mouseDirection.x) * Mathf.Rad2Deg;
     }
 
     void Shoot()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, _mouseDirection, 50, mask);
+        RaycastHit2D ray = Physics2D.Raycast(shootPos.position, _mouseDirection, 50, mask);
+        _anim.SetTrigger("Shoot");
         StartCoroutine(ShotVisualisation(ray));
 
         if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))
@@ -93,7 +96,7 @@ public class CharacterController : MonoBehaviour
     IEnumerator ShotVisualisation(RaycastHit2D ray)
     {
         _lineRenderer.enabled = true;
-        _lineRenderer.SetPosition(0, transform.position);
+        _lineRenderer.SetPosition(0, shootPos.position);
         if(ray.collider != null)
         {
             _lineRenderer.SetPosition(1, ray.point);
