@@ -48,14 +48,7 @@ public class Enemies : MonoBehaviour
         }
         bubble.transform.position = transform.position;
 
-        if(GetComponent<AIPath>().canMove)
-        {
-            anim.SetFloat("Vel", GetComponent<AIPath>().velocity.magnitude);
-        }
-        else
-        {
-            anim.SetFloat("Vel", 0);
-        }
+        anim.SetFloat("Vel", GetComponent<Rigidbody2D>().velocity.magnitude);
     }
 
     public void TakeDamage(int damageAmount)
@@ -81,6 +74,7 @@ public class Enemies : MonoBehaviour
     IEnumerator Convince()
     {
         gameObject.GetComponent<AIPath>().canMove = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
         yield return new WaitForSeconds(0.01f);
         gameObject.tag = "EnemyConvinced";
         bubbleAnim.SetTrigger("Bubble");
