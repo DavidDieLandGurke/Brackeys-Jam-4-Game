@@ -30,10 +30,13 @@ public class CharacterController : MonoBehaviour
 
     public ThoughtsBar thoughtsBar;
 
+    private Animator _anim;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _lineRenderer = GetComponent<LineRenderer>();
+        _anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         thoughtsBar.setMaxThoughts(maxHealth);
     }
@@ -45,11 +48,13 @@ public class CharacterController : MonoBehaviour
 
         _mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
-        transform.eulerAngles = new Vector3(0, 0, _mouseAngle);
+        transform.eulerAngles = new Vector3(0, 0, _mouseAngle + 90);
 
         Debug.DrawRay(transform.position, _mouseDirection);
 
-        GetComponent<LineRenderer>().SetPosition(0, transform.position);
+        _lineRenderer.SetPosition(0, transform.position);
+
+        _anim.SetFloat("Vel", _rb.velocity.magnitude);
 
         if (Input.GetMouseButtonDown(0))
         {
