@@ -18,6 +18,8 @@ public class Enemies : MonoBehaviour
     public GameObject bubble;
     public Animator bubbleAnim;
 
+    public Animator anim;
+
     public int id;
 
     void Start()
@@ -45,6 +47,15 @@ public class Enemies : MonoBehaviour
             sliderCanvas.transform.position = transform.position;
         }
         bubble.transform.position = transform.position;
+
+        if(GetComponent<AIPath>().canMove)
+        {
+            anim.SetFloat("Vel", GetComponent<AIPath>().velocity.magnitude);
+        }
+        else
+        {
+            anim.SetFloat("Vel", 0);
+        }
     }
 
     public void TakeDamage(int damageAmount)
@@ -69,7 +80,7 @@ public class Enemies : MonoBehaviour
 
     IEnumerator Convince()
     {
-        gameObject.GetComponent<AIPath>().enabled = false;
+        gameObject.GetComponent<AIPath>().canMove = false;
         yield return new WaitForSeconds(0.01f);
         gameObject.tag = "EnemyConvinced";
         bubbleAnim.SetTrigger("Bubble");

@@ -47,6 +47,7 @@ MonoBehaviour:
   fill: {fileID: 3627690664343050656}
   bubble: {fileID: 3790212969861685523}
   bubbleAnim: {fileID: 3790212969861685520}
+  anim: {fileID: 148131252229974349}
   id: 0
 --- !u!1001 &3790212969212871383
 PrefabInstance:
@@ -159,11 +160,27 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2879597217010554799, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2879597217010554799, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8090008316810827095, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
         type: 3}
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8090008316810827095, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6970173662859251850, guid: 0f73405e411aa124cb2b241aa64caac8,
+        type: 3}
     - target: {fileID: 8687750754373295055, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
         type: 3}
       propertyPath: m_TagString
@@ -206,6 +223,12 @@ MonoBehaviour:
 --- !u!1 &2229547132042109939 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3056109959631560996, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3790212969212871383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &148131252229974349 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 3933839350337252250, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
     type: 3}
   m_PrefabInstance: {fileID: 3790212969212871383}
   m_PrefabAsset: {fileID: 0}
