@@ -737,6 +737,7 @@ MonoBehaviour:
   deathCanvas: {fileID: 1265134742}
   maxHealth: 100
   thoughtsBar: {fileID: 382314088}
+  aimOffset: 90
 --- !u!58 &350326026
 CircleCollider2D:
   m_ObjectHideFlags: 0

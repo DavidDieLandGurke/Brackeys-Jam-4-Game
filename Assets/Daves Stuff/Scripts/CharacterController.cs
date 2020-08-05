@@ -32,6 +32,8 @@ public class CharacterController : MonoBehaviour
 
     private Animator _anim;
 
+    public float aimOffset;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -48,7 +50,7 @@ public class CharacterController : MonoBehaviour
 
         _mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
-        transform.eulerAngles = new Vector3(0, 0, _mouseAngle + 90);
+        transform.eulerAngles = new Vector3(0, 0, _mouseAngle + aimOffset);
 
         Debug.DrawRay(transform.position, _mouseDirection);
 
