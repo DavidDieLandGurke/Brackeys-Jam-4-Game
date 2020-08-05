@@ -15,11 +15,15 @@ public class Enemy : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
+    public GameObject bubble;
+    public Animator bubbleAnim;
+
+    public Animator anim;
+
     public int id;
 
     void Start()
     {
-        //GameEvents.NotNull();
         currentHealth = maxHealth;
         if (healthSlider != null && fill != null)
         {
@@ -31,7 +35,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(Convinced());
+            StartCoroutine(Convince());
         }
     }
 
@@ -42,6 +46,9 @@ public class Enemy : MonoBehaviour
             healthSlider.value = currentHealth;
             sliderCanvas.transform.position = transform.position;
         }
+        bubble.transform.position = transform.position;
+
+        anim.SetFloat("Vel", GetComponent<Rigidbody2D>().velocity.magnitude);
     }
 
     public void TakeDamage(int damageAmount)
@@ -58,18 +65,20 @@ public class Enemy : MonoBehaviour
             {
                 Destroy(sliderCanvas);
             }
+            GameEvents.NotNull(id);
+            id = 1000;
             Destroy(transform.parent.gameObject);
         }
     }
 
-    IEnumerator Convinced()
+    IEnumerator Convince()
     {
-        gameObject.GetComponent<AIPath>().enabled = false;
-        GameEvents.NotNull(id);
+        gameObject.GetComponent<AIPath>().canMove = false;
+        GetComponent<Rigidbody2D>().isKinematic = true;
         yield return new WaitForSeconds(0.01f);
         gameObject.tag = "EnemyConvinced";
-        id = 1000;
-        yield return new WaitForSeconds(5f);
+        bubbleAnim.SetTrigger("Bubble");
+        yield return new WaitForSeconds(2.5f);
         TakeDamage(100);
     }
 }
