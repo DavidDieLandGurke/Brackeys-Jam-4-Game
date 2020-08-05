@@ -38,7 +38,7 @@ public class TutorialManager : MonoBehaviour
             if (textsIndex < 3)
                 textsIndex++;
         }
-        else if (Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButtonDown(0)))
+        else if ((Input.GetMouseButtonDown(0)))
         {
             if (textsIndex == 1)
                 textsIndex++;
