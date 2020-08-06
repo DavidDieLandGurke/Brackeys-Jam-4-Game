@@ -15,6 +15,8 @@ public class Character : MonoBehaviour
     private Vector2 _mouseDirection;
     private float _mouseAngle;
 
+    public Transform shootPos;
+
     public int strength;
 
     public Camera mainCam;
@@ -26,14 +28,21 @@ public class Character : MonoBehaviour
     public GameObject deathCanvas;
 
     public int maxHealth;
-    public int currentHealth;
+    int currentHealth;
 
     public ThoughtsBar thoughtsBar;
+
+    private Animator _anim;
+
+    public float aimOffset;
+
+    public GameObject muzzleFlash;
 
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         _lineRenderer = GetComponent<LineRenderer>();
+        _anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         thoughtsBar.setMaxThoughts(maxHealth);
     }
@@ -45,11 +54,13 @@ public class Character : MonoBehaviour
 
         _mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
-        transform.eulerAngles = new Vector3(0, 0, _mouseAngle);
+        transform.eulerAngles = new Vector3(0, 0, _mouseAngle + aimOffset);
 
         Debug.DrawRay(transform.position, _mouseDirection);
 
-        GetComponent<LineRenderer>().SetPosition(0, transform.position);
+        _lineRenderer.SetPosition(0, shootPos.position);
+
+        _anim.SetFloat("Vel", _rb.velocity.magnitude);
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -61,13 +72,15 @@ public class Character : MonoBehaviour
     {
         _rb.velocity = new Vector2(_xAxis, _yAxis) * speed;
 
-        _mouseDirection = _mousePos - _rb.position;
+        _mouseDirection = _mousePos - new Vector2(shootPos.position.x, shootPos.position.y);
         _mouseAngle = Mathf.Atan2(_mouseDirection.y, _mouseDirection.x) * Mathf.Rad2Deg;
     }
 
     void Shoot()
     {
-        RaycastHit2D ray = Physics2D.Raycast(transform.position, _mouseDirection, 50, mask);
+        Instantiate(muzzleFlash, shootPos.position, shootPos.rotation);
+        RaycastHit2D ray = Physics2D.Raycast(shootPos.position, _mouseDirection, 50, mask);
+        _anim.SetTrigger("Shoot");
         StartCoroutine(ShotVisualisation(ray));
 
         if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))
@@ -86,7 +99,7 @@ public class Character : MonoBehaviour
     IEnumerator ShotVisualisation(RaycastHit2D ray)
     {
         _lineRenderer.enabled = true;
-        _lineRenderer.SetPosition(0, transform.position);
+        _lineRenderer.SetPosition(0, shootPos.position);
         if (ray.collider != null)
         {
             _lineRenderer.SetPosition(1, ray.point);
@@ -122,6 +135,6 @@ public class Character : MonoBehaviour
     IEnumerator onHit()
     {
         LoseThoughts(25);
-        yield return null;
+        yield return new WaitForSeconds(1.2f);
     }
 }
