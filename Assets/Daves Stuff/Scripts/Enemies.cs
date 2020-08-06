@@ -48,7 +48,7 @@ public class Enemies : MonoBehaviour
         }
         bubble.transform.position = transform.position;
 
-        anim.SetFloat("Vel", GetComponent<Rigidbody2D>().velocity.magnitude);
+        anim.SetFloat("Vel", GetComponent<AIPath>().velocity.magnitude);
     }
 
     public void TakeDamage(int damageAmount)

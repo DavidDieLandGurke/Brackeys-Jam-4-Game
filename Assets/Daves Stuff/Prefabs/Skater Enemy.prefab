@@ -47,8 +47,27 @@ MonoBehaviour:
   fill: {fileID: 3627690664343050656}
   bubble: {fileID: 3790212969861685523}
   bubbleAnim: {fileID: 3790212969861685520}
-  anim: {fileID: 148131252229974349}
+  anim: {fileID: 2396563296962029584}
   id: 0
+--- !u!95 &2396563296962029584
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478802485899319576}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 683e199a3a3924b4faec0e8a18e8b825, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &3790212969212871383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -148,7 +167,7 @@ PrefabInstance:
     - target: {fileID: 486863667666809169, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
         type: 3}
       propertyPath: m_Name
-      value: ENEMY Variant
+      value: Skater Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 486863667666809169, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
         type: 3}
@@ -179,7 +198,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -6970173662859251850, guid: 0f73405e411aa124cb2b241aa64caac8,
+      objectReference: {fileID: 21300000, guid: 110614c6587d98045b363d4007413ca2,
         type: 3}
     - target: {fileID: 8687750754373295055, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
         type: 3}
@@ -189,6 +208,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8730984034017938950, guid: 20b6cb4f5ff0395439128d3898f7e8d5, type: 3}
     - {fileID: 7395110710963614660, guid: 20b6cb4f5ff0395439128d3898f7e8d5, type: 3}
+    - {fileID: 1587297251737119253, guid: 20b6cb4f5ff0395439128d3898f7e8d5, type: 3}
+    - {fileID: 3933839350337252250, guid: 20b6cb4f5ff0395439128d3898f7e8d5, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 20b6cb4f5ff0395439128d3898f7e8d5, type: 3}
 --- !u!1 &3627690663819993900 stripped
 GameObject:
@@ -226,9 +247,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3790212969212871383}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &148131252229974349 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3933839350337252250, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
+--- !u!1 &5478802485899319576 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8687750754373295055, guid: 20b6cb4f5ff0395439128d3898f7e8d5,
     type: 3}
   m_PrefabInstance: {fileID: 3790212969212871383}
   m_PrefabAsset: {fileID: 0}

@@ -1369,6 +1369,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 3627690663489958790, guid: 0280ba7031aa38a4198d1d15d9b7b50a, type: 3}
+  - {fileID: 3627690663489958790, guid: b27a97b256a4b674dae005d6f8882a21, type: 3}
+  - {fileID: 3627690663489958790, guid: 64bdf7d51fd6fe44fb3fefd4b7415eea, type: 3}
+  - {fileID: 3627690663489958790, guid: c776e27f425bdf14d9aeb3784826ecda, type: 3}
   id: 3
 --- !u!1 &929319026
 GameObject:
@@ -5538,7 +5541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413651671}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000023841858, y: 0.00000011920929, z: -10}
+  m_LocalPosition: {x: -0.00000035762787, y: 0.00000011920929, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6109,6 +6112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 3627690663489958790, guid: 0280ba7031aa38a4198d1d15d9b7b50a, type: 3}
+  - {fileID: 3627690663489958790, guid: b27a97b256a4b674dae005d6f8882a21, type: 3}
+  - {fileID: 3627690663489958790, guid: 64bdf7d51fd6fe44fb3fefd4b7415eea, type: 3}
+  - {fileID: 3627690663489958790, guid: c776e27f425bdf14d9aeb3784826ecda, type: 3}
   id: 1
 --- !u!1 &1704864341
 GameObject:
@@ -6229,6 +6235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 3627690663489958790, guid: 0280ba7031aa38a4198d1d15d9b7b50a, type: 3}
+  - {fileID: 3627690663489958790, guid: b27a97b256a4b674dae005d6f8882a21, type: 3}
+  - {fileID: 3627690663489958790, guid: 64bdf7d51fd6fe44fb3fefd4b7415eea, type: 3}
+  - {fileID: 3627690663489958790, guid: c776e27f425bdf14d9aeb3784826ecda, type: 3}
   id: 2
 --- !u!1 &1893658703
 GameObject:
@@ -6275,6 +6284,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 3627690663489958790, guid: 0280ba7031aa38a4198d1d15d9b7b50a, type: 3}
+  - {fileID: 3627690663489958790, guid: b27a97b256a4b674dae005d6f8882a21, type: 3}
+  - {fileID: 3627690663489958790, guid: 64bdf7d51fd6fe44fb3fefd4b7415eea, type: 3}
+  - {fileID: 3627690663489958790, guid: c776e27f425bdf14d9aeb3784826ecda, type: 3}
   id: 4
 --- !u!1 &1949702532
 GameObject:
@@ -6336,7 +6348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949702532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000023841858, y: 0.00000011920929, z: -10}
+  m_LocalPosition: {x: -0.00000035762787, y: 0.00000011920929, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1136295490}
