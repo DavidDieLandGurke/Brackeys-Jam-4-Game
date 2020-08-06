@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 510136188135408501}
   - component: {fileID: 1306589466221251287}
   - component: {fileID: 1587297251737119253}
+  - component: {fileID: 3318452392467371995}
   m_Layer: 0
   m_Name: Enemy's Parent
   m_TagString: Enemy
@@ -724,7 +725,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3056109959631560996}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca9309a7f5fdcca49a0f24e39a0d7e0c, type: 3}
   m_Name: 
@@ -764,6 +765,55 @@ MonoBehaviour:
   fill: {fileID: 486863669022956407}
   bubble: {fileID: 1856775108}
   bubbleAnim: {fileID: 1856775111}
+  anim: {fileID: 0}
+  id: 0
+--- !u!114 &3318452392467371995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3056109959631560996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e0768db021b1484eb83f671abc65489, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  healthSlider: {fileID: 0}
+  sliderCanvas: {fileID: 0}
+  gradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  fill: {fileID: 0}
+  bubble: {fileID: 0}
+  bubbleAnim: {fileID: 0}
   anim: {fileID: 0}
   id: 0
 --- !u!1 &8687750754373295055
