@@ -1020,6 +1020,8 @@ MonoBehaviour:
   maxHealth: 100
   thoughtsBar: {fileID: 382314088}
   aimOffset: 90
+  muzzleFlash: {fileID: 0}
+  hitEffect: {fileID: 0}
 --- !u!58 &350326026
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7136,6 +7138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameObjects:
   - {fileID: 3627690663489958790, guid: 0280ba7031aa38a4198d1d15d9b7b50a, type: 3}
+  count: 10
   id: 4
 --- !u!1 &1949702532
 GameObject:

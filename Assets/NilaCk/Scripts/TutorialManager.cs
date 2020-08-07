@@ -37,9 +37,8 @@ public class TutorialManager : MonoBehaviour
         {
             if (textsIndex < 3)
                 textsIndex++;
-            if (textsIndex == 3)
+            if (textsIndex == 4)
             {
-
                 textsIndex++;
                 SceneManager.LoadScene(sceneBuildIndex: 0);
             }
