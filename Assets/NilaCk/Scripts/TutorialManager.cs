@@ -38,8 +38,11 @@ public class TutorialManager : MonoBehaviour
             if (textsIndex < 3)
                 textsIndex++;
             if (textsIndex == 3)
+            {
+
                 textsIndex++;
-            SceneManager.LoadScene(sceneBuildIndex: 0);
+                SceneManager.LoadScene(sceneBuildIndex: 0);
+            }
         }
         else if ((Input.GetMouseButtonDown(0)))
         {
