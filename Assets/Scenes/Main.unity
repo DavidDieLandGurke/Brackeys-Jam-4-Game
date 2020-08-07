@@ -941,7 +941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!58 &658799133
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1114,6 +1114,7 @@ MonoBehaviour:
   - {fileID: 3627690663489958790, guid: b27a97b256a4b674dae005d6f8882a21, type: 3}
   - {fileID: 3627690663489958790, guid: 64bdf7d51fd6fe44fb3fefd4b7415eea, type: 3}
   - {fileID: 3627690663489958790, guid: c776e27f425bdf14d9aeb3784826ecda, type: 3}
+  count: 3
   id: 3
 --- !u!1 &929319026
 GameObject:
@@ -5827,6 +5828,7 @@ MonoBehaviour:
   - {fileID: 3627690663489958790, guid: b27a97b256a4b674dae005d6f8882a21, type: 3}
   - {fileID: 3627690663489958790, guid: 64bdf7d51fd6fe44fb3fefd4b7415eea, type: 3}
   - {fileID: 3627690663489958790, guid: c776e27f425bdf14d9aeb3784826ecda, type: 3}
+  count: 3
   id: 1
 --- !u!1 &1704864341
 GameObject:
@@ -5950,6 +5952,7 @@ MonoBehaviour:
   - {fileID: 3627690663489958790, guid: b27a97b256a4b674dae005d6f8882a21, type: 3}
   - {fileID: 3627690663489958790, guid: 64bdf7d51fd6fe44fb3fefd4b7415eea, type: 3}
   - {fileID: 3627690663489958790, guid: c776e27f425bdf14d9aeb3784826ecda, type: 3}
+  count: 3
   id: 2
 --- !u!1 &1893658703
 GameObject:
@@ -5999,6 +6002,7 @@ MonoBehaviour:
   - {fileID: 3627690663489958790, guid: b27a97b256a4b674dae005d6f8882a21, type: 3}
   - {fileID: 3627690663489958790, guid: 64bdf7d51fd6fe44fb3fefd4b7415eea, type: 3}
   - {fileID: 3627690663489958790, guid: c776e27f425bdf14d9aeb3784826ecda, type: 3}
+  count: 3
   id: 4
 --- !u!1 &1949702532
 GameObject:

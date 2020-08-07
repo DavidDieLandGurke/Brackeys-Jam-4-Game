@@ -36,6 +36,9 @@ public class CharacterController : MonoBehaviour
 
     public float aimOffset;
 
+    public GameObject muzzleFlash;
+    public GameObject hitEffect;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -78,6 +81,12 @@ public class CharacterController : MonoBehaviour
     {
         RaycastHit2D ray = Physics2D.Raycast(shootPos.position, _mouseDirection, 50, mask);
         _anim.SetTrigger("Shoot");
+        if(muzzleFlash != null && hitEffect != null)
+        {
+            Instantiate(muzzleFlash, shootPos);
+            if (ray.collider != null)
+                Instantiate(hitEffect, ray.point, Quaternion.identity);
+        }
         StartCoroutine(ShotVisualisation(ray));
 
         if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))

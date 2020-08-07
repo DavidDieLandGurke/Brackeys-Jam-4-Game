@@ -7,10 +7,13 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] gameObjects;
+    public int count;
+    private int _countLeft;
     public int id;
 
     void Start()
     {
+        _countLeft = count;
         GameEvents.onSpawn += Spawn;
         Spawn(id);
     }
@@ -23,16 +26,20 @@ public class Spawner : MonoBehaviour
     {
         if (id == this.id)
         {
-            var randomObject = UnityEngine.Random.Range(0, gameObjects.Length);
-            var theObject = gameObjects[randomObject];
-            var newEnemy = Instantiate(theObject, transform.position, Quaternion.identity);
-            if(newEnemy.GetComponentInChildren<Enemy>() != null)
+            if(_countLeft > 0)
             {
-                newEnemy.GetComponentInChildren<Enemy>().id = id;
-            }
-            else
-            {
-                newEnemy.GetComponentInChildren<Enemies>().id = id;
+                var randomObject = UnityEngine.Random.Range(0, gameObjects.Length);
+                var theObject = gameObjects[randomObject];
+                var newEnemy = Instantiate(theObject, transform.position, Quaternion.identity);
+                if (newEnemy.GetComponentInChildren<Enemy>() != null)
+                {
+                    newEnemy.GetComponentInChildren<Enemy>().id = id;
+                }
+                else
+                {
+                    newEnemy.GetComponentInChildren<Enemies>().id = id;
+                }
+                _countLeft--;
             }
         }
     }
