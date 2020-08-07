@@ -12,8 +12,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 6379528743cf30748865a55cb9948b22
   - enabled: 1
-    path: Assets/Scenes/Daves Scene lol.unity
-    guid: 55fed12c409a4804c9d6a4d359e091c2
+    path: Assets/Scenes/FirstCutscene.unity
+    guid: f8fff850df77b8b4a9f66fa888a4451c
+  - enabled: 1
+    path: Assets/Scenes/Menu 2.unity
+    guid: 03fd9840e02db7841b801ea55ef8c255
+  - enabled: 1
+    path: Assets/Scenes/Main 2.unity
+    guid: 682ec9e22c394604ea3c5fcb5d5522fb
   - enabled: 1
     path: Assets/Scenes/NilaCkTut.unity
     guid: dacaa22b474b30b41a9f788af001557c

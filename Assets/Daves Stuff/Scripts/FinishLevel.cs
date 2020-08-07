@@ -6,11 +6,13 @@ using UnityEngine.SceneManagement;
 public class FinishLevel : MonoBehaviour
 {
     public GameObject warningText;
+    public string nextSceneName;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(FindObjectOfType<Enemies>() == null)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(nextSceneName);
         }
         else
         {
