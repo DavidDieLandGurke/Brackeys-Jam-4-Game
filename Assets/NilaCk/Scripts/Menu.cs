@@ -7,7 +7,12 @@ public class Menu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Tutorial()
+    {
+        SceneManager.LoadScene(sceneName: "NilaCkTut");
     }
 
     public void QuitApplication()
