@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   warningText: {fileID: 1141963452}
-  nextSceneName: Main
+  nextSceneName: SecondCutscene
 --- !u!61 &49330783
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main 2.unity
     guid: 682ec9e22c394604ea3c5fcb5d5522fb
   - enabled: 1
+    path: Assets/Scenes/SecondCutscene.unity
+    guid: 89452abde4cb7554d95106889303109c
+  - enabled: 1
     path: Assets/Scenes/NilaCkTut.unity
     guid: dacaa22b474b30b41a9f788af001557c
   m_configObjects: {}

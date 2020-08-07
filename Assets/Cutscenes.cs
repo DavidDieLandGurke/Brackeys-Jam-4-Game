@@ -7,6 +7,7 @@ using UnityEngine.Video;
 public class Cutscenes : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
+    public string nextSceneName;
 
     void Start()
     {
