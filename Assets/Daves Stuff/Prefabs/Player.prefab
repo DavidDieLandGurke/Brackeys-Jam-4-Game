@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   shootPos: {fileID: 2258562133598120031}
-  strength: 5
+  strength: 20
   mainCam: {fileID: 0}
   mask:
     serializedVersion: 2
@@ -178,6 +178,8 @@ MonoBehaviour:
   maxHealth: 100
   thoughtsBar: {fileID: 0}
   aimOffset: 90
+  muzzleFlash: {fileID: 0}
+  hitEffect: {fileID: 0}
 --- !u!120 &2258562134181553331
 LineRenderer:
   m_ObjectHideFlags: 0
