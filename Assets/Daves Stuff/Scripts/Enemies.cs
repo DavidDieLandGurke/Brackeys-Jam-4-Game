@@ -76,6 +76,7 @@ public class Enemies : MonoBehaviour
         gameObject.GetComponent<AIPath>().canMove = false;
         GetComponent<Rigidbody2D>().isKinematic = true;
         yield return new WaitForSeconds(0.01f);
+        Destroy(sliderCanvas);
         gameObject.tag = "EnemyConvinced";
         bubbleAnim.SetTrigger("Bubble");
         yield return new WaitForSeconds(2.5f);

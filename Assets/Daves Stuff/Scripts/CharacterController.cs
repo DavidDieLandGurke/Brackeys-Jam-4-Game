@@ -38,6 +38,7 @@ public class CharacterController : MonoBehaviour
 
     public GameObject muzzleFlash;
     public GameObject hitEffect;
+    public GameObject enemyHitEffect;
 
     void Start()
     {
@@ -83,15 +84,13 @@ public class CharacterController : MonoBehaviour
         _anim.SetTrigger("Shoot");
         if(muzzleFlash != null && hitEffect != null)
         {
-            Instantiate(muzzleFlash, shootPos);
-            if (ray.collider != null)
-                Instantiate(hitEffect, ray.point, Quaternion.identity);
-        }
+            Instantiate(muzzleFlash, shootPos.position, Quaternion.identity);        }
         StartCoroutine(ShotVisualisation(ray));
 
         if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))
         {
-            if(ray.collider.gameObject.GetComponent<Enemies>() != null)
+            Instantiate(enemyHitEffect, ray.point, Quaternion.identity);
+            if (ray.collider.gameObject.GetComponent<Enemies>() != null)
             {
                 ray.collider.gameObject.GetComponent<Enemies>().TakeDamage(strength);
             }
@@ -99,6 +98,10 @@ public class CharacterController : MonoBehaviour
             {
                 ray.collider.gameObject.GetComponent<Enemy>().TakeDamage(strength);
             }
+        }
+        else
+        {
+            Instantiate(hitEffect, ray.point, Quaternion.identity);
         }
     }
 
