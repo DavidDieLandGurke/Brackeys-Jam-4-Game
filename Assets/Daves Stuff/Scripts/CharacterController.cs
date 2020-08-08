@@ -47,6 +47,7 @@ public class CharacterController : MonoBehaviour
         _anim = GetComponent<Animator>();
         currentHealth = maxHealth;
         thoughtsBar.setMaxThoughts(maxHealth);
+        FindObjectOfType<AudioManager>().Play("GameStart");
     }
 
     void Update()
@@ -80,7 +81,7 @@ public class CharacterController : MonoBehaviour
 
     void Shoot()
     {
-        FindObjectOfType<AudioManager>().Play("Never");
+        FindObjectOfType<AudioManager>().Play("Shoot");
         RaycastHit2D ray = Physics2D.Raycast(shootPos.position, _mouseDirection, 50, mask);
         _anim.SetTrigger("Shoot");
         if(muzzleFlash != null && hitEffect != null)
@@ -93,6 +94,22 @@ public class CharacterController : MonoBehaviour
             Instantiate(enemyHitEffect, ray.point, Quaternion.identity);
             if (ray.collider.gameObject.GetComponent<Enemies>() != null)
             {
+                if (ray.collider.gameObject.GetComponent<Enemies>().jankTag == "Cop")
+                {
+                    FindObjectOfType<AudioManager>().Play($"CopHurt{Random.Range(1, 3)}");
+                }
+                else if (ray.collider.gameObject.GetComponent<Enemies>().jankTag == "Teacher")
+                {
+                    FindObjectOfType<AudioManager>().Play($"TeacherHurt{Random.Range(1, 3)}");
+                }
+                else if (ray.collider.gameObject.GetComponent<Enemies>().jankTag == "Worker")
+                {
+                    FindObjectOfType<AudioManager>().Play($"WorkerHurt{Random.Range(1, 3)}");
+                }
+                else if (ray.collider.gameObject.GetComponent<Enemies>().jankTag == "Skater")
+                {
+                    FindObjectOfType<AudioManager>().Play("SkaterHurt");
+                }
                 ray.collider.gameObject.GetComponent<Enemies>().TakeDamage(strength);
             }
             else
@@ -100,11 +117,13 @@ public class CharacterController : MonoBehaviour
                 ray.collider.gameObject.GetComponent<Enemy>().TakeDamage(strength);
             }
         }
+
         else if (ray.collider != null && ray.collider.gameObject.CompareTag("EnemyConvinced"))
         {
             Instantiate(enemyHitEffect, ray.point, Quaternion.identity);
             if (ray.collider.gameObject.GetComponent<Enemies>() != null)
             {
+
                 ray.collider.gameObject.GetComponent<Enemies>().TakeDamage(strength);
             }
             else
@@ -149,8 +168,10 @@ public class CharacterController : MonoBehaviour
         thoughtsBar.setThoughts(currentHealth);
         if (currentHealth <= 0)
         {
+            FindObjectOfType<AudioManager>().Play($"PlayerDeath{Random.Range(1, 3)}");
             deathCanvas.SetActive(true);
             Destroy(gameObject);
+            FindObjectOfType<AudioManager>().Play("GameOver");
         }
     }
 }

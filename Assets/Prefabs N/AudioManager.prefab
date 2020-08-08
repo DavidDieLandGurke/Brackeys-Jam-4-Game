@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - name: Song
-    clip: {fileID: 8300000, guid: 3f03583e3713be54faad497a1b6bd4f0, type: 3}
+    clip: {fileID: 8300000, guid: d6b854f89decbb7468b7e153cc4c04ef, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
@@ -53,12 +53,336 @@ MonoBehaviour:
     loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
-  - name: Never
-    clip: {fileID: 8300000, guid: 0f51ee4331ce7cc4a837cb9e31a7659a, type: 3}
+  - name: CopAttack1
+    clip: {fileID: 8300000, guid: ca691c582fb2eb840a95e9fa1661b345, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CopAttack2
+    clip: {fileID: 8300000, guid: 1affd1e00d6a50b47a6e14c2651ff349, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CopAttack3
+    clip: {fileID: 8300000, guid: f3e82db608fa1c14eb3b54e411ab0b6f, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CopDeath1
+    clip: {fileID: 8300000, guid: 8a4da28e382cec0458bae8b38d4e141b, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CopDeath2
+    clip: {fileID: 8300000, guid: 4ba22bdcf15c32243ba0549c976c0327, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CopDeath3
+    clip: {fileID: 8300000, guid: 2bf58dee5bed5bb4ca6f60605961eb31, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CopHurt1
+    clip: {fileID: 8300000, guid: 335672a2527c5b04d8545a56c4137bb0, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CopHurt2
+    clip: {fileID: 8300000, guid: 0bfd69b1ccd17ff45b87e19e2e85ff05, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: CopHurt3
+    clip: {fileID: 8300000, guid: 20747a7dbd519484e9835e066c1c5629, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: PlayerDeath1
+    clip: {fileID: 8300000, guid: cd78307e3f8c66b47afecb18aaec836b, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: PlayerDeath2
+    clip: {fileID: 8300000, guid: c7c68c3f8aeccbd408b2116c2bb68c80, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: PlayerDeath3
+    clip: {fileID: 8300000, guid: b2eda5d0f2c1c28408bc3a46599d1c51, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Shoot
+    clip: {fileID: 8300000, guid: 2edec11d91709ac48b3a0411a09984b3, type: 3}
+    volume: 0.75
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: PlayerHurt1
+    clip: {fileID: 8300000, guid: b900f176d67157f46a2525d3056949b2, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: PlayerHurt2
+    clip: {fileID: 8300000, guid: 6fd0b6d655adf414f9a96f81a7660538, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: PlayerHurt3
+    clip: {fileID: 8300000, guid: ba9b86ed787f7284e90116d84e072b73, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: PlayerHurt4
+    clip: {fileID: 8300000, guid: c74fd3deabfd0bd4e8f4382b4fba88e6, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: TeacherAttack1
+    clip: {fileID: 8300000, guid: 733906bcd1e9b5f4f9a6900ec91ae332, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: TeacherAttack2
+    clip: {fileID: 8300000, guid: 29e91c80afa8d65438e644fca9d716ef, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: TeacherAttack3
+    clip: {fileID: 8300000, guid: 8f90565001d63ca478453f819ac47641, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: TeacherHurt1
+    clip: {fileID: 8300000, guid: 470bf50c7dc98e4498b78a0621ce16c0, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: TeacherHurt2
+    clip: {fileID: 8300000, guid: 87add5fa7e2ebcf4cbadc0e3d8f0ff1b, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: TeacherHurt3
+    clip: {fileID: 8300000, guid: f33664eb55c99454891e8c3e1dd30df4, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Wind
+    clip: {fileID: 8300000, guid: 50559fe68adda894bbea9b1d1a531f21, type: 3}
     volume: 1
     volumeVariance: 0
     pitch: 1
     pitchVariance: 0
     loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: TeacherDeath1
+    clip: {fileID: 8300000, guid: 9fd5051e3c95e0c459e326577cfcce73, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: TeacherDeath2
+    clip: {fileID: 8300000, guid: 4d1828879ecc84e4b916b10f4f392d43, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: TeacherDeath3
+    clip: {fileID: 8300000, guid: bdf9fd87cee33b14cb6a9cdc8c7fb397, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WorkerAttack1
+    clip: {fileID: 8300000, guid: 006623c246a643140b2a4141396184a8, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WorkerAttack2
+    clip: {fileID: 8300000, guid: 6cd77bc1e38c402459642e86a398bf91, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WorkerAttack3
+    clip: {fileID: 8300000, guid: 3d954053c3d421a40875d44a2df5a47d, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WorkerDeath1
+    clip: {fileID: 8300000, guid: 8a239abb03a99ca44a4bed54d8ff034a, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WorkerDeath2
+    clip: {fileID: 8300000, guid: a08ee2f9ef685a246924c378ae2ceafa, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WorkerDeath3
+    clip: {fileID: 8300000, guid: ed4e4f6b22265e140a402379fa2b6e10, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WorkerHurt1
+    clip: {fileID: 8300000, guid: 4f74ce4f3e7b28742936317af6ff1536, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WorkerHurt2
+    clip: {fileID: 8300000, guid: 2d54d589dffcdb4449a935a5860749b8, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: WorkerHurt3
+    clip: {fileID: 8300000, guid: 1171056ce2613364cbab22eceed297e5, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SkaterHurt1
+    clip: {fileID: 8300000, guid: dd106e20fd33c7645a19777e00268de9, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}

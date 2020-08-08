@@ -29,6 +29,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  jankTag: Worker
   healthSlider: {fileID: 3627690663469072156}
   sliderCanvas: {fileID: 3627690663819993900}
   gradient:
