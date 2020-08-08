@@ -9,6 +9,8 @@ public class Enemies : MonoBehaviour
     public float maxHealth = 100;
     float currentHealth;
 
+    public string jankTag;
+
     public Slider healthSlider;
     public GameObject sliderCanvas;
 
@@ -73,13 +75,59 @@ public class Enemies : MonoBehaviour
 
     IEnumerator Convince()
     {
+        if (jankTag == "Cop")
+        {
+            FindObjectOfType<AudioManager>().Play($"CopAttack{Random.Range(1, 3)}");
+            yield return new WaitForSeconds(0.01f);
+            jankTag = "CopConvinced";
+            yield return new WaitForSeconds(2f);
+            jankTag = "Cop";
+        }
+        if (jankTag == "Teacher")
+        {
+            FindObjectOfType<AudioManager>().Play($"TeacherAttack{Random.Range(1, 3)}");
+            yield return new WaitForSeconds(0.01f);
+            jankTag = "CopConvinced";
+            yield return new WaitForSeconds(2f);
+            jankTag = "Teacher";
+        }
+        if (jankTag == "Worker")
+        {
+            FindObjectOfType<AudioManager>().Play($"WorkerAttack{Random.Range(1, 3)}");
+            yield return new WaitForSeconds(0.01f);
+            jankTag = "CopConvinced";
+            yield return new WaitForSeconds(2f);
+            jankTag = "Worker";
+        }
+
         gameObject.GetComponent<AIPath>().canMove = false;
         GetComponent<Rigidbody2D>().isKinematic = true;
         yield return new WaitForSeconds(0.01f);
+        FindObjectOfType<AudioManager>().Play($"PlayerHurt{Random.Range(1, 4)}");
         Destroy(sliderCanvas);
         gameObject.tag = "EnemyConvinced";
         bubbleAnim.SetTrigger("Bubble");
         yield return new WaitForSeconds(2.5f);
+
+        if (jankTag == "Cop")
+        {
+            FindObjectOfType<AudioManager>().Play($"CopDeath{Random.Range(1, 3)}");
+            yield return new WaitForSeconds(0.01f);
+            jankTag = "CopConvinced";
+        }
+        else if (jankTag == "Teacher")
+        {
+            FindObjectOfType<AudioManager>().Play($"TeacherDeath{Random.Range(1, 3)}");
+            yield return new WaitForSeconds(0.01f);
+            jankTag = "CopConvinced";
+        }
+        else if (jankTag == "Worker")
+        {
+            FindObjectOfType<AudioManager>().Play($"WorkerDeath{Random.Range(1, 3)}");
+            yield return new WaitForSeconds(0.01f);
+            jankTag = "CopConvinced";
+        }
+
         TakeDamage(100);
     }
 }

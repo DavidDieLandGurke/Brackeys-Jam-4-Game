@@ -9,6 +9,8 @@ public class Enemy : MonoBehaviour
     public float maxHealth = 100;
     float currentHealth;
 
+    public string jankTag;
+
     public Slider healthSlider;
     public GameObject sliderCanvas;
 
@@ -73,6 +75,11 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Convince()
     {
+        if(jankTag == "Cop")
+        {
+            FindObjectOfType<AudioManager>().Play($"CopAttack{Random.Range(1, 3)}");
+        }
+
         gameObject.GetComponent<AIPath>().canMove = false;
         GetComponent<Rigidbody2D>().isKinematic = true;
         yield return new WaitForSeconds(0.01f);

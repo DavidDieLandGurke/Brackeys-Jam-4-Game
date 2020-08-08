@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
 		Play("Song");
+		Play("Wind");
     }
 
     void Awake()
