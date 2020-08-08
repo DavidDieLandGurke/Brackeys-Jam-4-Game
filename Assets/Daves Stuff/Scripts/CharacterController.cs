@@ -80,6 +80,7 @@ public class CharacterController : MonoBehaviour
 
     void Shoot()
     {
+        FindObjectOfType<AudioManager>().Play("Never");
         RaycastHit2D ray = Physics2D.Raycast(shootPos.position, _mouseDirection, 50, mask);
         _anim.SetTrigger("Shoot");
         if(muzzleFlash != null && hitEffect != null)
@@ -88,6 +89,18 @@ public class CharacterController : MonoBehaviour
         StartCoroutine(ShotVisualisation(ray));
 
         if (ray.collider != null && ray.collider.gameObject.CompareTag("Enemy"))
+        {
+            Instantiate(enemyHitEffect, ray.point, Quaternion.identity);
+            if (ray.collider.gameObject.GetComponent<Enemies>() != null)
+            {
+                ray.collider.gameObject.GetComponent<Enemies>().TakeDamage(strength);
+            }
+            else
+            {
+                ray.collider.gameObject.GetComponent<Enemy>().TakeDamage(strength);
+            }
+        }
+        else if (ray.collider != null && ray.collider.gameObject.CompareTag("EnemyConvinced"))
         {
             Instantiate(enemyHitEffect, ray.point, Quaternion.identity);
             if (ray.collider.gameObject.GetComponent<Enemies>() != null)
@@ -126,7 +139,7 @@ public class CharacterController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            StartCoroutine(onHit());
+            LoseThoughts(25);
         }
     }
 
@@ -139,11 +152,5 @@ public class CharacterController : MonoBehaviour
             deathCanvas.SetActive(true);
             Destroy(gameObject);
         }
-    }
-
-    IEnumerator onHit()
-    {
-        LoseThoughts(25);
-        yield return new WaitForSeconds(1.2f);
     }
 }

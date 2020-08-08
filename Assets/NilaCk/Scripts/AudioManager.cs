@@ -9,7 +9,12 @@ public class AudioManager : MonoBehaviour
 
 	public Sound[] sounds;
 
-	void Awake()
+    void Start()
+    {
+		Play("Song");
+    }
+
+    void Awake()
 	{
 		if (instance != null)
 		{
