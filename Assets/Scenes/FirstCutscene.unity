@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 1861647788}
-  nextSceneName: Menu 2
+  nextSceneName: Main
 --- !u!1001 &482896078
 PrefabInstance:
   m_ObjectHideFlags: 0
